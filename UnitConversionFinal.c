@@ -11,6 +11,12 @@ void length()
     printf("8 Milimeter to meter : \n");
     printf("9 Milimeter to centimeter : \n");
     printf("10 Milimeter to micrometer : \n");
+    printf("11 Foot to Centimeter\n");
+    printf("12 Centimeter to Foot\n");
+    printf("13 Foot to inch\n");
+    printf("14 Inch to Foot\n");
+    printf("15 Inch to centimeter\n");
+    printf("16 Centimeter to Inch\n");
     int tempchoice;
     double value, output;
     printf("Enter choice :  \n");
@@ -76,6 +82,42 @@ void length()
         scanf("%lf", &value);
         output = value * 1000;
         printf("%.3lf milimeter = %.3lf micrometer.\n", value, output);
+        break;
+    case 11:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value * 30.48;
+        printf("%.3lf Foot = %.3lf Centimeter.\n", value, output);
+        break;
+    case 12:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value / 30.48;
+        printf("%.3lf Centimeter = %.3lf Foot.\n", value, output);
+        break;
+    case 13:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value * 12;
+        printf("%.3lf Foot = %.3lf Inch.\n", value, output);
+        break;
+    case 14:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value / 12;
+        printf("%.3lf Inch = %.3lf Foot.\n", value, output);
+        break;
+    case 15:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value * 2.54;
+        printf("%.3lf Inch = %.3lf Centimeter.\n", value, output);
+        break;
+    case 16:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value / 2.54;
+        printf("%.3lf Centimeter = %.3lf Inch.\n", value, output);
         break;
 
     default:
@@ -265,11 +307,46 @@ void time()
         break;
     }
 }
+void Tempreture()
+{
+    printf("1 Celcius to Fahrenheit\n");
+    printf("2 Fahrenheit to Celcius\n");
+    printf("3 Celcius to Kelvin.\n");
+    int tempchoice;
+    double value, output;
+    printf("Enter choice :  \n");
+    scanf("%d", &tempchoice);
+    switch (tempchoice)
+    {
+    case 1:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = (9 * value) / 5 + 32;
+        printf("%.3lf Celcius = %.3lf Fahrenheit.\n", value, output);
+        break;
+    case 2:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = (5 * (value - 32)) / 9;
+        printf("%.3lf Fahrenheit = %.3lf Celcius.\n", value, output);
+        break;
+    case 3:
+        printf("Enter value : \n");
+        scanf("%lf", &value);
+        output = value + 273;
+        printf("%.3lf Fahrenheit = %.3lf Celcius.\n", value, output);
+        break;
+    default:
+        printf("Invalid Input\n");
+        break;
+    }
+}
 int main()
 {
     printf("1 Lenght: \n");
     printf("2 Mass: \n");
     printf("3 Time: \n");
+    printf("4 tempreture: \n");
     int choice;
     printf("Enter choice : \n");
     scanf("%d", &choice);
@@ -281,7 +358,12 @@ int main()
     case 2:
         mass();
         break;
-
+    case 3:
+        time();
+        break;
+    case 4:
+        Tempreture();
+        break;
     default:
         printf("Enter Valid Input\n");
         break;
